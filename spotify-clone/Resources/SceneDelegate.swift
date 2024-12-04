@@ -13,10 +13,21 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
 
 
     func scene(_ scene: UIScene, willConnectTo session: UISceneSession, options connectionOptions: UIScene.ConnectionOptions) {
-        // Use this method to optionally configure and attach the UIWindow `window` to the provided UIWindowScene `scene`.
-        // If using a storyboard, the `window` property will automatically be initialized and attached to the scene.
-        // This delegate does not imply the connecting scene or session are new (see `application:configurationForConnectingSceneSession` instead).
-        guard let _ = (scene as? UIWindowScene) else { return }
+       
+        guard let windowScene = (scene as? UIWindowScene) else { return }
+         
+        let window = UIWindow(windowScene: windowScene)
+        if AuthManager.shared.isSignedIn {
+            window.rootViewController = TabBarViewController()
+        } else {
+            let navVc = UINavigationController(rootViewController: WelcomeViewController())
+            navVc.navigationBar.prefersLargeTitles = true
+            navVc.viewControllers.first?.navigationItem.largeTitleDisplayMode = .always
+            window.rootViewController = navVc
+        }
+        
+         window.makeKeyAndVisible()
+         self.window = window
     }
 
     func sceneDidDisconnect(_ scene: UIScene) {
@@ -46,7 +57,45 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         // Use this method to save data, release shared resources, and store enough scene-specific state information
         // to restore the scene back to its current state.
     }
+    
+//    func application(_ app: UIApplication, open url: URL, options: [UIApplication.OpenURLOptionsKey : Any] = [:]) -> Bool {
+//        // Ensure the URL matches your custom scheme
+//            if url.scheme == "gopal-dev.gopal", url.host == "callback" {
+//                if let code = URLComponents(string: url.absoluteString)?
+//                    .queryItems?.first(where: { $0.name == "code" })?.value {
+//                    print("Authorization Code: \(code)")
+//                    // Exchange the code for an access token
+//                }
+//                return true
+//            }
+//            return false
+//    }
+    
+    func scene(_ scene: UIScene, openURLContexts URLContexts: Set<UIOpenURLContext>) {
+        guard let url = URLContexts.first?.url else { return }
+        
 
-
+        if url.scheme == "gopal-dev.gopal", url.host == "callback" {
+            
+            if let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
+                
+                let controllers = navController.viewControllers
+                
+                print(controllers)
+                
+                if controllers.count > 1 , let rootVC = controllers[1] as? AuthViewController, let welcomeVC = controllers.first as? WelcomeViewController {
+                    rootVC.safariVC?.dismiss(animated: true)
+                    if let code = URLComponents(string: url.absoluteString)?
+                        .queryItems?.first(where: { $0.name == "code" })?.value {
+                        AuthManager.shared.exchangeCodeForToken(code: code) { [weak self] success in
+                            DispatchQueue.main.async {
+                                welcomeVC.handleSignIn(success: success)
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }
 
