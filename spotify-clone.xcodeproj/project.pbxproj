@@ -9,8 +9,6 @@
 /* Begin PBXBuildFile section */
 		612C11AA2D0073F7008448A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11A92D0073F7008448A1 /* AppDelegate.swift */; };
 		612C11AC2D0073F7008448A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11AB2D0073F7008448A1 /* SceneDelegate.swift */; };
-		612C11AE2D0073F7008448A1 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11AD2D0073F7008448A1 /* ViewController.swift */; };
-		612C11B12D0073F7008448A1 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612C11AF2D0073F7008448A1 /* Main.storyboard */; };
 		612C11B32D0073F9008448A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612C11B22D0073F9008448A1 /* Assets.xcassets */; };
 		612C11B62D0073F9008448A1 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 612C11B42D0073F9008448A1 /* LaunchScreen.storyboard */; };
 		612C11C12D0073F9008448A1 /* spotify_cloneTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11C02D0073F9008448A1 /* spotify_cloneTests.swift */; };
@@ -39,8 +37,6 @@
 		612C11A62D0073F7008448A1 /* spotify-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spotify-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		612C11A92D0073F7008448A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		612C11AB2D0073F7008448A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
-		612C11AD2D0073F7008448A1 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		612C11B02D0073F7008448A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		612C11B22D0073F9008448A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		612C11B52D0073F9008448A1 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		612C11B72D0073F9008448A1 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -99,12 +95,12 @@
 		612C11A82D0073F7008448A1 /* spotify-clone */ = {
 			isa = PBXGroup;
 			children = (
-				612C11A92D0073F7008448A1 /* AppDelegate.swift */,
-				612C11AB2D0073F7008448A1 /* SceneDelegate.swift */,
-				612C11AD2D0073F7008448A1 /* ViewController.swift */,
-				612C11AF2D0073F7008448A1 /* Main.storyboard */,
-				612C11B22D0073F9008448A1 /* Assets.xcassets */,
-				612C11B42D0073F9008448A1 /* LaunchScreen.storyboard */,
+				612C11DE2D007429008448A1 /* Resources */,
+				612C11DD2D00741E008448A1 /* Controllers */,
+				612C11DC2D007419008448A1 /* Views */,
+				612C11DB2D007414008448A1 /* ViewModels */,
+				612C11DA2D00740F008448A1 /* Models */,
+				612C11D92D007409008448A1 /* Managers */,
 				612C11B72D0073F9008448A1 /* Info.plist */,
 			);
 			path = "spotify-clone";
@@ -125,6 +121,68 @@
 				612C11CC2D0073F9008448A1 /* spotify_cloneUITestsLaunchTests.swift */,
 			);
 			path = "spotify-cloneUITests";
+			sourceTree = "<group>";
+		};
+		612C11D92D007409008448A1 /* Managers */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Managers;
+			sourceTree = "<group>";
+		};
+		612C11DA2D00740F008448A1 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		612C11DB2D007414008448A1 /* ViewModels */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = ViewModels;
+			sourceTree = "<group>";
+		};
+		612C11DC2D007419008448A1 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				612C11B42D0073F9008448A1 /* LaunchScreen.storyboard */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		612C11DD2D00741E008448A1 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				612C11E02D007446008448A1 /* Others */,
+				612C11DF2D00743F008448A1 /* Core */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		612C11DE2D007429008448A1 /* Resources */ = {
+			isa = PBXGroup;
+			children = (
+				612C11A92D0073F7008448A1 /* AppDelegate.swift */,
+				612C11AB2D0073F7008448A1 /* SceneDelegate.swift */,
+				612C11B22D0073F9008448A1 /* Assets.xcassets */,
+			);
+			path = Resources;
+			sourceTree = "<group>";
+		};
+		612C11DF2D00743F008448A1 /* Core */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Core;
+			sourceTree = "<group>";
+		};
+		612C11E02D007446008448A1 /* Others */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			path = Others;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -233,7 +291,6 @@
 			files = (
 				612C11B62D0073F9008448A1 /* LaunchScreen.storyboard in Resources */,
 				612C11B32D0073F9008448A1 /* Assets.xcassets in Resources */,
-				612C11B12D0073F7008448A1 /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -258,7 +315,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				612C11AE2D0073F7008448A1 /* ViewController.swift in Sources */,
 				612C11AA2D0073F7008448A1 /* AppDelegate.swift in Sources */,
 				612C11AC2D0073F7008448A1 /* SceneDelegate.swift in Sources */,
 			);
@@ -297,14 +353,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		612C11AF2D0073F7008448A1 /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				612C11B02D0073F7008448A1 /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		612C11B42D0073F9008448A1 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -447,7 +495,6 @@
 				INFOPLIST_FILE = "spotify-clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
@@ -475,7 +522,6 @@
 				INFOPLIST_FILE = "spotify-clone/Info.plist";
 				INFOPLIST_KEY_UIApplicationSupportsIndirectInputEvents = YES;
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
-				INFOPLIST_KEY_UIMainStoryboardFile = Main;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				LD_RUNPATH_SEARCH_PATHS = (
