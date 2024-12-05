@@ -18,15 +18,18 @@ final class APICaller {
     }
     
     enum APIError: Error {
-        case failToGetDate
+        case failToGetData
     }
     
     
     public func getCurrentUserProfile(completion: @escaping(Result<UserProfile, Error>) -> Void) {
-        createRequest(with: URL(string: Constants.baseURL + "/me"), type: .GET) { request in
+        createRequest(
+            with: URL(string: Constants.baseURL + "/me"),
+            type: .GET
+        ) { request in
             let task = URLSession.shared.dataTask(with: request) {data, _, error in
                 guard let data = data, error == nil else {
-                    completion(.failure(APIError.failToGetDate))
+                    completion(.failure(APIError.failToGetData))
                     return
                 }
                 
@@ -46,15 +49,17 @@ final class APICaller {
     
     
     public func getNewRelease(completion: @escaping((Result<NewReleasesResponse, Error>) -> Void)) {
-        createRequest(with: URL(string: Constants.baseURL + "/browse/new-releases?limit=50"), type: .GET) { request in
+        createRequest(
+            with: URL(string: Constants.baseURL + "/browse/new-releases?limit=50"),
+            type: .GET
+        ) { request in
             let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
                 guard let data = data, error == nil else {
-                    completion(.failure(APIError.failToGetDate))
+                    completion(.failure(APIError.failToGetData))
                     return
                 }
                 do {
                     let result = try JSONDecoder().decode(NewReleasesResponse.self, from: data)
-                    print(result)
                     completion(.success(result))
                 } catch {
                     completion(.failure(error))
@@ -64,6 +69,80 @@ final class APICaller {
             task.resume()
         }
     }
+    
+    
+    public func getFeaturedPlaylists(completion: @escaping((Result<FeaturedPlaylistsResponse, Error>) -> Void)) {
+        createRequest(
+            with: URL(string: Constants.baseURL + "/browse/featured-playlists?limit=20"),
+            type: .GET
+        ) { request in
+            let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(FeaturedPlaylistsResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    public func getRecommendations(genres: Set<String>,  completion: @escaping ((Result<String, Error>) -> Void)) {
+        let seeds = genres.joined(separator: ",")
+        createRequest(
+            with: URL(string: Constants.baseURL + "/recommendations?seed_genres=\(seeds)"),
+            type: .GET
+        ) { request in
+                let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
+                    guard let data = data, error == nil else {
+                        completion(.failure(APIError.failToGetData))
+                        return
+                    }
+                    do {
+                        let result = try JSONDecoder().decode(FeaturedPlaylistsResponse.self, from: data)
+                        completion(.success("result"))
+                    } catch {
+                        completion(.failure(error))
+                    }
+                }
+                task.resume()
+            }
+        }
+    
+    
+    public func getRecommendedGeners(completion: @escaping ((Result<RecommendedGenresResponse, Error>)) -> Void) {
+        createRequest(
+            with: URL(string: Constants.baseURL + "/recommendations/available-genre-seeds"),
+            type: .GET
+        ) { request in
+            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+                
+                if let httpResponse = response as? HTTPURLResponse {
+                    print("Status Code: \(httpResponse.statusCode)")
+                }
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failToGetData))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    print(error.localizedDescription)
+                    completion(.failure(error))
+                }
+            }
+            task.resume()
+        }
+    }
+    
+    
+    
     
     enum HTTPMethod: String {
         case GET
