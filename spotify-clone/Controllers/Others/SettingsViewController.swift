@@ -19,8 +19,6 @@ class SettingsViewController: UIViewController {
     
     private var sections = [Section]()
     
-    
-    
     override func viewDidLoad() {
         super.viewDidLoad()
         
