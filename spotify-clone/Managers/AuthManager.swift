@@ -17,7 +17,7 @@ final class AuthManager {
         static let clientID = "823ed4e2ab354579a85fe6b9ba519e5e"
         static let clientSecret = "8bbd9d09023042eea47b5655b146c79c"
         static let tokenAPIURL = "https://accounts.spotify.com/api/token"
-        static let redirectURI = "gopal-dev.gopal://callback"
+        static let redirectURI = "gopal-dev.spotify-clone://callback"
         static let scopes = "user-read-private%20playlist-modify-public%20playlist-read-private%20playlist-modify-private%20user-follow-read%20user-library-modify%20user-library-read%20user-read-email"
     }
     
@@ -103,7 +103,7 @@ final class AuthManager {
         }
     }
     
-    public func refreshIfNeeded(completion: @escaping (Bool) -> Void) {
+    public func refreshIfNeeded(completion: ((Bool) -> Void)?) {
         
         guard !refreshingToken else {
             return
@@ -118,7 +118,7 @@ final class AuthManager {
         }
         
         guard let url = URL(string: Constants.tokenAPIURL) else {
-            completion(false)
+            completion?(false)
             return
         }
         refreshingToken = true
@@ -140,7 +140,7 @@ final class AuthManager {
         let data = basicToken.data(using: .utf8)
         guard let base64code = data?.base64EncodedString() else {
             print("base 64 convertion failed")
-            completion(false)
+            completion?(false)
             return
         }
         
@@ -149,7 +149,7 @@ final class AuthManager {
         let task = URLSession.shared.dataTask(with: request) { [weak self] data, _, error in
             self?.refreshingToken = false
             guard let data = data, error == nil else {
-                completion(false)
+                completion?(false)
                 return
             }
             do {
@@ -157,10 +157,10 @@ final class AuthManager {
                 self?.onRefreshBlocks.forEach{ $0(result.access_token)}
                 self?.onRefreshBlocks.removeAll()
                 self?.cacheToken(token: result)
-                completion(true)
+                completion?(true)
             } catch {
                 print(error.localizedDescription)
-                completion(false)
+                completion?(false)
             }
         }
         

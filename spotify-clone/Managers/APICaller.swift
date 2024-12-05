@@ -45,10 +45,32 @@ final class APICaller {
     }
     
     
+    public func getNewRelease(completion: @escaping((Result<NewReleasesResponse, Error>) -> Void)) {
+        createRequest(with: URL(string: Constants.baseURL + "/browse/new-releases?limit=50"), type: .GET) { request in
+            let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failToGetDate))
+                    return
+                }
+                do {
+                    let result = try JSONDecoder().decode(NewReleasesResponse.self, from: data)
+                    print(result)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
+                
+            }
+            task.resume()
+        }
+    }
+    
     enum HTTPMethod: String {
         case GET
         case POST
     }
+    
+    
     
     private func createRequest(with url: URL?,type: HTTPMethod, completion: @escaping(URLRequest) -> Void) {
         AuthManager.shared.withValidToken { token in

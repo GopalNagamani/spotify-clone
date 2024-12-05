@@ -75,7 +75,7 @@ class SceneDelegate: UIResponder, UIWindowSceneDelegate {
         guard let url = URLContexts.first?.url else { return }
         
 
-        if url.scheme == "gopal-dev.gopal", url.host == "callback" {
+        if url.scheme == "gopal-dev.spotify-clone", url.host == "callback" {
             
             if let navController = UIApplication.shared.keyWindow?.rootViewController as? UINavigationController {
                 
