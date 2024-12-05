@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		0FBB73667535553089724B94 /* Pods_spotify_clone.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = FDB3D73B61A3763052CCE66C /* Pods_spotify_clone.framework */; };
+		38DC1F3FF2626E8446F8959A /* Pods_spotify_cloneTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6B09D89B6C4D3F2F6759D63E /* Pods_spotify_cloneTests.framework */; };
 		612C11AA2D0073F7008448A1 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11A92D0073F7008448A1 /* AppDelegate.swift */; };
 		612C11AC2D0073F7008448A1 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C11AB2D0073F7008448A1 /* SceneDelegate.swift */; };
 		612C11B32D0073F9008448A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 612C11B22D0073F9008448A1 /* Assets.xcassets */; };
@@ -35,6 +37,7 @@
 		612C12072D00760F008448A1 /* AuthManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C12042D00760F008448A1 /* AuthManager.swift */; };
 		612C12082D00760F008448A1 /* HapticsManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C12052D00760F008448A1 /* HapticsManager.swift */; };
 		612C120A2D007657008448A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 612C12092D007657008448A1 /* Extensions.swift */; };
+		EDFA7978A21DF1EBF5E28E53 /* Pods_spotify_clone_spotify_cloneUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2B3FD9F683D7537BB9057D70 /* Pods_spotify_clone_spotify_cloneUITests.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +58,9 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		18A18BF2B1C9DE72FDB98D18 /* Pods-spotify-clone.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-clone.debug.xcconfig"; path = "Target Support Files/Pods-spotify-clone/Pods-spotify-clone.debug.xcconfig"; sourceTree = "<group>"; };
+		2B3FD9F683D7537BB9057D70 /* Pods_spotify_clone_spotify_cloneUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotify_clone_spotify_cloneUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		39CDD2F3200F5A0609FDF122 /* Pods-spotify-cloneTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-cloneTests.debug.xcconfig"; path = "Target Support Files/Pods-spotify-cloneTests/Pods-spotify-cloneTests.debug.xcconfig"; sourceTree = "<group>"; };
 		612C11A62D0073F7008448A1 /* spotify-clone.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "spotify-clone.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		612C11A92D0073F7008448A1 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		612C11AB2D0073F7008448A1 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -87,6 +93,12 @@
 		612C12042D00760F008448A1 /* AuthManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AuthManager.swift; sourceTree = "<group>"; };
 		612C12052D00760F008448A1 /* HapticsManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = HapticsManager.swift; sourceTree = "<group>"; };
 		612C12092D007657008448A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		6B09D89B6C4D3F2F6759D63E /* Pods_spotify_cloneTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotify_cloneTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		9B87867ABD5E28FC07FD709B /* Pods-spotify-clone-spotify-cloneUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-clone-spotify-cloneUITests.debug.xcconfig"; path = "Target Support Files/Pods-spotify-clone-spotify-cloneUITests/Pods-spotify-clone-spotify-cloneUITests.debug.xcconfig"; sourceTree = "<group>"; };
+		CBF55B65BF48B990772C72DA /* Pods-spotify-clone.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-clone.release.xcconfig"; path = "Target Support Files/Pods-spotify-clone/Pods-spotify-clone.release.xcconfig"; sourceTree = "<group>"; };
+		E170A274EB40DC7AC24FD3F3 /* Pods-spotify-cloneTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-cloneTests.release.xcconfig"; path = "Target Support Files/Pods-spotify-cloneTests/Pods-spotify-cloneTests.release.xcconfig"; sourceTree = "<group>"; };
+		F80DC89A729E6B9292AC78FC /* Pods-spotify-clone-spotify-cloneUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-spotify-clone-spotify-cloneUITests.release.xcconfig"; path = "Target Support Files/Pods-spotify-clone-spotify-cloneUITests/Pods-spotify-clone-spotify-cloneUITests.release.xcconfig"; sourceTree = "<group>"; };
+		FDB3D73B61A3763052CCE66C /* Pods_spotify_clone.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_spotify_clone.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -94,6 +106,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				0FBB73667535553089724B94 /* Pods_spotify_clone.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -101,6 +114,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				38DC1F3FF2626E8446F8959A /* Pods_spotify_cloneTests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -108,12 +122,36 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				EDFA7978A21DF1EBF5E28E53 /* Pods_spotify_clone_spotify_cloneUITests.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		003272993DCA0B5A7420840F /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				18A18BF2B1C9DE72FDB98D18 /* Pods-spotify-clone.debug.xcconfig */,
+				CBF55B65BF48B990772C72DA /* Pods-spotify-clone.release.xcconfig */,
+				9B87867ABD5E28FC07FD709B /* Pods-spotify-clone-spotify-cloneUITests.debug.xcconfig */,
+				F80DC89A729E6B9292AC78FC /* Pods-spotify-clone-spotify-cloneUITests.release.xcconfig */,
+				39CDD2F3200F5A0609FDF122 /* Pods-spotify-cloneTests.debug.xcconfig */,
+				E170A274EB40DC7AC24FD3F3 /* Pods-spotify-cloneTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		4BF98805B335D5BFD7199744 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				FDB3D73B61A3763052CCE66C /* Pods_spotify_clone.framework */,
+				2B3FD9F683D7537BB9057D70 /* Pods_spotify_clone_spotify_cloneUITests.framework */,
+				6B09D89B6C4D3F2F6759D63E /* Pods_spotify_cloneTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
 		612C119D2D0073F7008448A1 = {
 			isa = PBXGroup;
 			children = (
@@ -121,6 +159,8 @@
 				612C11BF2D0073F9008448A1 /* spotify-cloneTests */,
 				612C11C92D0073F9008448A1 /* spotify-cloneUITests */,
 				612C11A72D0073F7008448A1 /* Products */,
+				003272993DCA0B5A7420840F /* Pods */,
+				4BF98805B335D5BFD7199744 /* Frameworks */,
 			);
 			sourceTree = "<group>";
 		};
@@ -255,9 +295,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 612C11D02D0073F9008448A1 /* Build configuration list for PBXNativeTarget "spotify-clone" */;
 			buildPhases = (
+				BFCB7B0A3893EE42F7874CDA /* [CP] Check Pods Manifest.lock */,
 				612C11A22D0073F7008448A1 /* Sources */,
 				612C11A32D0073F7008448A1 /* Frameworks */,
 				612C11A42D0073F7008448A1 /* Resources */,
+				820094CAE5CE3106B6C7CB91 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -272,6 +314,7 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 612C11D32D0073F9008448A1 /* Build configuration list for PBXNativeTarget "spotify-cloneTests" */;
 			buildPhases = (
+				4345F90C8A5726B405830685 /* [CP] Check Pods Manifest.lock */,
 				612C11B82D0073F9008448A1 /* Sources */,
 				612C11B92D0073F9008448A1 /* Frameworks */,
 				612C11BA2D0073F9008448A1 /* Resources */,
@@ -290,9 +333,11 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = 612C11D62D0073F9008448A1 /* Build configuration list for PBXNativeTarget "spotify-cloneUITests" */;
 			buildPhases = (
+				AAC10CCD6803845A589BE359 /* [CP] Check Pods Manifest.lock */,
 				612C11C22D0073F9008448A1 /* Sources */,
 				612C11C32D0073F9008448A1 /* Frameworks */,
 				612C11C42D0073F9008448A1 /* Resources */,
+				177F1A9D5F17D7406BEB5956 /* [CP] Embed Pods Frameworks */,
 			);
 			buildRules = (
 			);
@@ -336,6 +381,8 @@
 				Base,
 			);
 			mainGroup = 612C119D2D0073F7008448A1;
+			packageReferences = (
+			);
 			productRefGroup = 612C11A72D0073F7008448A1 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -372,6 +419,109 @@
 			runOnlyForDeploymentPostprocessing = 0;
 		};
 /* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		177F1A9D5F17D7406BEB5956 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotify-clone-spotify-cloneUITests/Pods-spotify-clone-spotify-cloneUITests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotify-clone-spotify-cloneUITests/Pods-spotify-clone-spotify-cloneUITests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spotify-clone-spotify-cloneUITests/Pods-spotify-clone-spotify-cloneUITests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		4345F90C8A5726B405830685 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotify-cloneTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		820094CAE5CE3106B6C7CB91 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotify-clone/Pods-spotify-clone-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-spotify-clone/Pods-spotify-clone-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-spotify-clone/Pods-spotify-clone-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AAC10CCD6803845A589BE359 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotify-clone-spotify-cloneUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BFCB7B0A3893EE42F7874CDA /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-spotify-clone-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
 		612C11A22D0073F7008448A1 /* Sources */ = {
@@ -485,7 +635,7 @@
 				DEBUG_INFORMATION_FORMAT = dwarf;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
 				ENABLE_TESTABILITY = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_DYNAMIC_NO_PIC = NO;
 				GCC_NO_COMMON_BLOCKS = YES;
@@ -500,7 +650,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
 				MTL_FAST_MATH = YES;
@@ -548,7 +698,7 @@
 				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
 				ENABLE_NS_ASSERTIONS = NO;
 				ENABLE_STRICT_OBJC_MSGSEND = YES;
-				ENABLE_USER_SCRIPT_SANDBOXING = YES;
+				ENABLE_USER_SCRIPT_SANDBOXING = NO;
 				GCC_C_LANGUAGE_STANDARD = gnu17;
 				GCC_NO_COMMON_BLOCKS = YES;
 				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
@@ -557,7 +707,7 @@
 				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
 				GCC_WARN_UNUSED_FUNCTION = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LOCALIZATION_PREFERS_STRING_CATALOGS = YES;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				MTL_FAST_MATH = YES;
@@ -569,6 +719,7 @@
 		};
 		612C11D12D0073F9008448A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 18A18BF2B1C9DE72FDB98D18 /* Pods-spotify-clone.debug.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -581,6 +732,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -596,6 +748,7 @@
 		};
 		612C11D22D0073F9008448A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = CBF55B65BF48B990772C72DA /* Pods-spotify-clone.release.xcconfig */;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
@@ -608,6 +761,7 @@
 				INFOPLIST_KEY_UILaunchStoryboardName = LaunchScreen;
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPad = "UIInterfaceOrientationPortrait UIInterfaceOrientationPortraitUpsideDown UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
 				INFOPLIST_KEY_UISupportedInterfaceOrientations_iPhone = "UIInterfaceOrientationPortrait UIInterfaceOrientationLandscapeLeft UIInterfaceOrientationLandscapeRight";
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
 					"@executable_path/Frameworks",
@@ -623,6 +777,7 @@
 		};
 		612C11D42D0073F9008448A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 39CDD2F3200F5A0609FDF122 /* Pods-spotify-cloneTests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -630,7 +785,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44CRS85BTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gopal.dev.spotify-cloneTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -643,6 +798,7 @@
 		};
 		612C11D52D0073F9008448A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = E170A274EB40DC7AC24FD3F3 /* Pods-spotify-cloneTests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				BUNDLE_LOADER = "$(TEST_HOST)";
@@ -650,7 +806,7 @@
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44CRS85BTR;
 				GENERATE_INFOPLIST_FILE = YES;
-				IPHONEOS_DEPLOYMENT_TARGET = 17.2;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gopal.dev.spotify-cloneTests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -663,12 +819,14 @@
 		};
 		612C11D72D0073F9008448A1 /* Debug */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B87867ABD5E28FC07FD709B /* Pods-spotify-clone-spotify-cloneUITests.debug.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44CRS85BTR;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gopal.dev.spotify-cloneUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -681,12 +839,14 @@
 		};
 		612C11D82D0073F9008448A1 /* Release */ = {
 			isa = XCBuildConfiguration;
+			baseConfigurationReference = F80DC89A729E6B9292AC78FC /* Pods-spotify-clone-spotify-cloneUITests.release.xcconfig */;
 			buildSettings = {
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				CODE_SIGN_STYLE = Automatic;
 				CURRENT_PROJECT_VERSION = 1;
 				DEVELOPMENT_TEAM = 44CRS85BTR;
 				GENERATE_INFOPLIST_FILE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 13.0;
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = "gopal.dev.spotify-cloneUITests";
 				PRODUCT_NAME = "$(TARGET_NAME)";

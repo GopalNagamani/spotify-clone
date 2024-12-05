@@ -1,0 +1,6 @@
+framework module Pods_spotify_cloneTests {
+  umbrella header "Pods-spotify-cloneTests-umbrella.h"
+
+  export *
+  module * { export * }
+}
