@@ -38,7 +38,7 @@ This project is a clone of Spotify, designed to replicate the functionality and 
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/spotify-clone.git
+   git clone https://github.com/GopalNagamani/spotify-clone.git
 
 3. Navigate to the project directory:
    ```bash
