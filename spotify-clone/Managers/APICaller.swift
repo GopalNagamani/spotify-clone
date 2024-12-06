@@ -76,7 +76,7 @@ final class APICaller {
             with: URL(string: Constants.baseURL + "/browse/featured-playlists?limit=20"),
             type: .GET
         ) { request in
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
+            let task = URLSession.shared.dataTask(with: request) { data, _ , error in
                 guard let data = data, error == nil else {
                     completion(.failure(APIError.failToGetData))
                     return
@@ -98,21 +98,21 @@ final class APICaller {
             with: URL(string: Constants.baseURL + "/recommendations?limit=40&seed_genres=\(seeds)"),
             type: .GET
         ) { request in
-                let task = URLSession.shared.dataTask(with: request) { [weak self] data, _ , error in
-                    guard let data = data, error == nil else {
-                        completion(.failure(APIError.failToGetData))
-                        return
-                    }
-                    do {
-                        let result = try JSONDecoder().decode(RecommendationResponse.self, from: data)
-                        completion(.success(result))
-                    } catch {
-                        completion(.failure(error))
-                    }
+            let task = URLSession.shared.dataTask(with: request) { data, _ , error in
+                guard let data = data, error == nil else {
+                    completion(.failure(APIError.failToGetData))
+                    return
                 }
-                task.resume()
+                do {
+                    let result = try JSONDecoder().decode(RecommendationResponse.self, from: data)
+                    completion(.success(result))
+                } catch {
+                    completion(.failure(error))
+                }
             }
+            task.resume()
         }
+    }
     
     
     public func getRecommendedGeners(completion: @escaping ((Result<RecommendedGenresResponse, Error>)) -> Void) {
@@ -120,7 +120,7 @@ final class APICaller {
             with: URL(string: Constants.baseURL + "/recommendations/available-genre-seeds"),
             type: .GET
         ) { request in
-            let task = URLSession.shared.dataTask(with: request) { [weak self] data, response, error in
+            let task = URLSession.shared.dataTask(with: request) { data, response, error in
                 
                 if let httpResponse = response as? HTTPURLResponse {
                     print("Status Code: \(httpResponse.statusCode)")
@@ -141,15 +141,10 @@ final class APICaller {
         }
     }
     
-    
-    
-    
     enum HTTPMethod: String {
         case GET
         case POST
     }
-    
-    
     
     private func createRequest(with url: URL?,type: HTTPMethod, completion: @escaping(URLRequest) -> Void) {
         AuthManager.shared.withValidToken { token in
@@ -165,6 +160,4 @@ final class APICaller {
             
         }
     }
-    
-    
 }
