@@ -61,7 +61,7 @@ This project is a clone of Spotify, designed to replicate the functionality and 
 
 ## License
 
-Distributed under the MIT License. See LICENSE for more information.
+Distributed under the MIT License. See [License](LICENSE) for more information.
 
 ## Contact
 
