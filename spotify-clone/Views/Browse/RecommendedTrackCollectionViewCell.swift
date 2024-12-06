@@ -11,8 +11,7 @@ class RecommendedTrackCollectionViewCell: UICollectionViewCell {
     
     static let identifier = "RecommendedTrackCollectionViewCell"
     
-    
-    
+
     private let albumCoverImageView: UIImageView = {
         let imageView = UIImageView()
         imageView.image = UIImage(systemName: "photo")
