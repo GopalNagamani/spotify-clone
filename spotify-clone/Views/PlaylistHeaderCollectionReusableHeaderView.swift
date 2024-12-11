@@ -54,10 +54,10 @@ final class PlaylistHeaderCollectionReusableHeaderView: UICollectionReusableView
     private let playAllButton: UIButton = {
         let button = UIButton()
         button.backgroundColor = .systemGreen
-        let image = UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 30, weight: .regular))
+        let image = UIImage(systemName: "play.fill", withConfiguration: UIImage.SymbolConfiguration(pointSize: 20, weight: .regular))
         button.setImage(image, for: .normal)
         button.tintColor = .white
-        button.layer.cornerRadius = 30
+        button.layer.cornerRadius = 25
         button.layer.masksToBounds = true
         return button
         
@@ -88,7 +88,7 @@ final class PlaylistHeaderCollectionReusableHeaderView: UICollectionReusableView
         descriptionLabel.frame = CGRect(x: 10, y: nameLabel.bottom, width: width - 20, height: 44)
         ownerLabel.frame = CGRect(x: 10, y: descriptionLabel.bottom, width: width - 20, height: 44)
         
-        playAllButton.frame = CGRect(x: width - 80, y: height - 80, width: 60, height: 60)
+        playAllButton.frame = CGRect(x: width - 80, y: height - 80, width: 50, height: 50)
     }
     
     @objc func didTapPlayAll() {
