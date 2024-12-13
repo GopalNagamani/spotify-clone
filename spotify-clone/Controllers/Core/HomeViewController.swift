@@ -78,6 +78,13 @@ class HomeViewController: UIViewController {
         self.collectionView?.register(
             FeaturedPlaylistCollectionViewCell.self,
             forCellWithReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier)
+        
+        
+        self.collectionView?.register(
+            UsersPlaylistCollectionViewCell.self,
+            forCellWithReuseIdentifier: UsersPlaylistCollectionViewCell.identifier)
+        
+        
         self.collectionView?.register(
             RecommendedTrackCollectionViewCell.self,
             forCellWithReuseIdentifier: RecommendedTrackCollectionViewCell.identifier)
@@ -93,11 +100,11 @@ class HomeViewController: UIViewController {
         
         let group = DispatchGroup()
         group.enter()
-//        group.enter()
+        group.enter()
 //        group.enter()
         
         var newReleases: NewReleasesResponse?
-        var featuredPlaylist: FeaturedPlaylistsResponse?
+        var featuredPlaylist: PlaylistResponse?
         var recommendations: RecommendationResponse?
         
         APICaller.shared.getNewRelease { result in
@@ -112,16 +119,16 @@ class HomeViewController: UIViewController {
             }
         }
         
-//        APICaller.shared.getFeaturedPlaylists { result in
-//            defer {
-//                group.leave()
-//            }
-//            switch result {
-//            case .failure(let error): break
-//            case .success(let model):
-//                featuredPlaylist = model
-//            }
-//        }
+        APICaller.shared.getFeaturedPlaylists { result in
+            defer {
+                group.leave()
+            }
+            switch result {
+            case .failure(let error): break
+            case .success(let model):
+                featuredPlaylist = model
+            }
+        }
 //        
 //        APICaller.shared.getRecommendedGeners { result in
 //            switch result {
@@ -162,7 +169,7 @@ class HomeViewController: UIViewController {
             self.configureModels(
                 newAlbums: newReleases?.albums.items ?? [],
                 tracks: recommendations?.tracks ?? [],
-                playList: featuredPlaylist?.playlists.items ?? [])
+                playList: featuredPlaylist?.items ?? [])
         }
     }
     
@@ -236,11 +243,12 @@ extension HomeViewController: UICollectionViewDelegate, UICollectionViewDataSour
         let type = sections[indexPath.section]
         switch type {
         case .featuredPlaylists(let viewModels):
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: FeaturedPlaylistCollectionViewCell.identifier, for: indexPath) as? NewReleaseCollectionViewCell else { fatalError() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: UsersPlaylistCollectionViewCell.identifier, for: indexPath) as? UsersPlaylistCollectionViewCell else { fatalError() }
             let viewModel = viewModels[indexPath.row]
+            cell.configure(with: viewModel)
             return cell
         case .recommendedTracks(let viewModels):
-            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? NewReleaseCollectionViewCell else { fatalError() }
+            guard let cell = collectionView.dequeueReusableCell(withReuseIdentifier: RecommendedTrackCollectionViewCell.identifier, for: indexPath) as? RecommendedTrackCollectionViewCell else { fatalError() }
             let viewModel = viewModels[indexPath.row]
             return cell
         case .newReleases(let viewModels):

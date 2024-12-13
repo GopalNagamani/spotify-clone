@@ -84,6 +84,7 @@ final class AuthManager {
     }
     
     private var onRefreshBlocks = [((String) -> Void)]()
+    
     public func withValidToken(completion: @escaping (String) -> Void) {
         
         guard !refreshingToken else {
@@ -92,6 +93,7 @@ final class AuthManager {
         }
         
         if shouldRefreshToken {
+            print("Token is getting refreshed")
             refreshIfNeeded { [weak self] success in
                 if success, let token = self?.accessToken {
                     completion(token)

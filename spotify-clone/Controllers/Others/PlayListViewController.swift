@@ -61,7 +61,7 @@ class PlayListViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        title = playlist.name
+//        title = playlist.name
         view.backgroundColor = .systemBackground
         
         view.addSubview(collectionView)
