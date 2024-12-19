@@ -12,5 +12,6 @@ struct Artist: Codable {
     let name: String
     let id: String
     let type: String
+    let images: [APIImage]?
     let external_urls: [String: String]
 }
