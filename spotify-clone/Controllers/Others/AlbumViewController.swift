@@ -135,7 +135,7 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
         let index = indexPath.row
         let track = tracks[index]
         
-        PlayBackPresenter.startPlayBack(from: self, track: track)
+        PlayBackPresenter.shared.startPlayBack(from: self, track: track)
     }
     
     func collectionView(_ collectionView: UICollectionView, viewForSupplementaryElementOfKind kind: String, at indexPath: IndexPath) -> UICollectionReusableView {
@@ -160,6 +160,6 @@ extension AlbumViewController: UICollectionViewDelegate, UICollectionViewDataSou
 
 extension AlbumViewController: PlaylistHeaderCollectionReusableHeaderViewDelegate {
     func PlaylistHeaderViewDidTapPlayAll(_ header: PlaylistHeaderCollectionReusableHeaderView) {
-        PlayBackPresenter.startPlayBack(from: self, tracks: tracks)
+        PlayBackPresenter.shared.startPlayBack(from: self, tracks: tracks)
     }
 }

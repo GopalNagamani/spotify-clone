@@ -146,7 +146,7 @@ extension SearchViewController: SearchResultsViewControllerDelegate {
         case .playlists(let playlist):
             controller = PlayListViewController(playlist: playlist)
         case .tracks(let track):
-            PlayBackPresenter.startPlayBack(from: self, track: track)
+            PlayBackPresenter.shared.startPlayBack(from: self, track: track)
             break
         }
         if let controller = controller {

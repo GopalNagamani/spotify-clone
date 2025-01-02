@@ -34,6 +34,12 @@ final class APICaller {
                 }
                 
                 do {
+                    
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(AlbumDetailsResponse.self, from: data)
                     completion(.success(result))
                     
@@ -60,6 +66,11 @@ final class APICaller {
                 }
                 
                 do {
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(PlaylistDetailsResponse.self, from: data)
                     completion(.success(result))
                     
@@ -87,6 +98,11 @@ final class APICaller {
                 }
                 
                 do {
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(UserProfile.self, from: data)
                     completion(.success(result))
                     
@@ -144,6 +160,9 @@ final class APICaller {
                 }
                 do {
                     
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
                     
                     let result = try JSONDecoder().decode(PlaylistResponse.self, from: data)
                     completion(.success(result))
@@ -167,6 +186,11 @@ final class APICaller {
                     return
                 }
                 do {
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(RecommendationResponse.self, from: data)
                     completion(.success(result))
                 } catch {
@@ -193,6 +217,11 @@ final class APICaller {
                     return
                 }
                 do {
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(RecommendedGenresResponse.self, from: data)
                     completion(.success(result))
                 } catch {
@@ -219,6 +248,11 @@ final class APICaller {
                     return
                 }
                 do {
+                    
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
+                    
+                    
                     let result = try JSONDecoder().decode(AllCategoriesResponse.self, from: data)
                     completion(.success(result.categories.items))
                 } catch {
@@ -246,9 +280,8 @@ final class APICaller {
                 }
                 do {
                     
-                    
-//                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-//                    print(response)
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
                     
                     
                     let result = try JSONDecoder().decode(CategoriesPlaylistsResponse.self, from: data)
@@ -279,9 +312,9 @@ final class APICaller {
                 }
                 do {
                     
+                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
+                    print(response)
                     
-//                    let response = try JSONSerialization.jsonObject(with: data, options: .fragmentsAllowed)
-//                    print(response)
                     
                     
                     let result = try JSONDecoder().decode(SearchResultsResponse.self, from: data)
