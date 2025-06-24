@@ -4,17 +4,18 @@ This project is a script-based tool to **validate headshots and flags** for tabl
 
 ## Table of Contents
 
-* [Project Structure](#project-structure)
-* [Prerequisites](#prerequisites)
-* [Configuration](#configuration)
-* [What this script does](#what-this-script-does)
-* [How to Run](#how-to-run)
-* [Output](#output)
-* [Face Comparison](#face-comparison)
-* [Tips](#tips)
-* [Example Config Snippet](#example-config-snippet)
-* [Authorization](#authorization)
-* [Log](#log)
+* [📂 Project Structure](#-📂-project-structure)
+* [📦 Prerequisites](#-📦-prerequisites)
+* [📄 Configuration](#-📄-configuration)
+* [🔐 Authorization](#-🔐-authorization)
+* [📜 Log](#-📜-log)
+* [💡 What this script does](#-💡-what-this-script-does)
+* [🚀 How to Run](#-🚀-how-to-run)
+* [📊 Output](#-📊-output)
+* [🧪 Face Comparison](#-🧪-face-comparison)
+* [🛠 Tips](#-🛠-tips)
+* [📝 Example Config Snippet](#-📝-example-config-snippet)
+  
 
 ---
 
