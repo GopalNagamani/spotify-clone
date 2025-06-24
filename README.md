@@ -40,7 +40,7 @@ This project is a script-based tool to **validate headshots and flags** for tabl
 * Install dependencies:
 
 ```bash
-pip install pandas requests xlsxwriter
+pip install pandas requests xlsxwriter opencv-python
 ```
 
 ---
