@@ -4,16 +4,17 @@ This project is a script-based tool to **validate headshots and flags** for tabl
 
 ## Table of Contents
 
-- [Project Structure](#project-structure)
-- [Prerequisites](#prerequisites)
-- [Configuration](#configuration)
-- [What this script does](#what-this-script-does)
-- [How to Run](#how-to-run)
-- [Output](#output)
-- [Face Comparison](#face-comparison)
-- [Tips](#tips)
-- [Example Config Snippet](#example-config-snippet)
-- [Contact](#contact)
+* [Project Structure](#project-structure)
+* [Prerequisites](#prerequisites)
+* [Configuration](#configuration)
+* [What this script does](#what-this-script-does)
+* [How to Run](#how-to-run)
+* [Output](#output)
+* [Face Comparison](#face-comparison)
+* [Tips](#tips)
+* [Example Config Snippet](#example-config-snippet)
+* [Authorization](#authorization)
+* [Log](#log)
 
 ---
 
@@ -33,11 +34,11 @@ This project is a script-based tool to **validate headshots and flags** for tabl
 
 ---
 
-## ⚙️ Prerequisites
+## 📦 Requirements
 
 * Python 3.8+
-* Visual Studio 
-* Install dependencies:
+* .Net runtime 9.0 or higher
+* Required packages:
 
 ```bash
 pip install pandas requests xlsxwriter opencv-python
@@ -65,28 +66,64 @@ config/config_get_event_matchesv1.txt
 
 ---
 
+## 🔐 Authorization
+
+Before running any validation scripts, users must **log in using their Microsoft account** through the desktop application interface. This ensures only authorized users from your organization can access and execute sensitive operations like API calls and face comparisons.
+
+### How It Works:
+
+* When the desktop application (`ScriptRunnerApp.exe`) is launched, it prompts the user to authenticate via **Microsoft Single Sign-On (SSO)**.
+* This helps in **tracking script execution history**, ensuring **accountability**, and **restricting access** to approved personnel only.
+* This login is a **prerequisite** before running any scripts listed in the app.
+
+---
+
+## 📜 Log
+
+The script logs useful metadata about each execution. This helps in auditing and debugging. Logged info includes:
+
+* User who executed the script
+* Script name
+* Timestamp of execution
+* Any runtime errors (if any)
+
+### Sample Log Output:
+
+```text
+Logged in User: krishnamurthy.manjini@theoptimum.net
+Script Run: config_face_comparev1.py
+Timestamp: 2025-06-23 15:18:45
+****************************************
+python: can't open file 'C:\\Users\\Gopal Nagamani\\ScriptRunnerApp_23Jun2025\\ScriptRunnerApp\\bin\\Debug\\net6.0-windows\\C\\Users\\Gopal Nagamani\\ScriptRunnerApp_23Jun2025\\ScriptRunnerApp\\bin\\Debug\\net6.0-windows\\scripts\\config_face_comparev1.py': [Errno 2] No such file or directory
+****************************************
+```
+
+Logs are usually printed in the console and optionally can be redirected to a log file by modifying the script.
+
+---
+
 ## 💡 What this script does
 
 ### 1. Download and Validate Assets (`MasterHeadshotsandFlagsValidationstv0.py`)
 
 Main script to:
 
-* Update `isQuailifier = True` if going to validate headshots for qualifying draw matches, `isQuailifier = False` if going to validate headshots for main draw matches
 * Fetch participants
 * Download headshots (Full or Incremental)
 * Fetch matches
 * Validate presence of headshots and flags
-* (Optional) Perform face comparison using Azure Face API
+* Perform face comparison using Azure Face API, based on the configuration set.
 * Export results to Excel
 
 Ensure your configuration file (`config_*.txt`) is named appropriately to match the script name.
 
+---
 
 ## 🚀 How to Run
 
-* Install Validator App
-* Run ```MasterHeadshotsandFlagsValidations``` to download headshots from server
-* Run ```get_event_matchesv1``` to compare headshots for the event
+* Run ScriptRunnerApp.exe app
+* You can able to see and run multiple validations options under Scripts
+* You can able to see multiple configurations already added. Update the path based on your system where the files located.
 
 ---
 
@@ -96,9 +133,16 @@ A `.xlsx` file is generated in the specified `OUTPUT_FOLDER`. It contains:
 
 * `participants`: All players fetched from participants API
 * `MatchesToday`: Matches for the specified date
+* `playerslist`: Players list for the matches scheduled today
 * `hs_<tag>`: Headshot validation (R and L images)
 * `flg_<tag>`: Flag presence validation
 * Optional face comparison confidence and match status columns
+* Under `hs_<tag>`: sheet we have 2 columns `Headshot_R` and `Headshot_L`. These columns will return:
+
+  * `'yes'` if the headshot is present
+  * `'no'` if the headshot is missing
+  * `'Incorrect Dimensions'` if the image resolution is wrong
+  * `'0 kB'` if the image is corrupted
 
 ---
 
@@ -132,11 +176,5 @@ do_face_compare=yes
 AZURE_FACE_API_KEY = your_key_here
 AZURE_FACE_API_ENDPOINT = https://your_endpoint/
 ```
-
----
-
-## 📬 Contact
-
-WTT contact details 
 
 ---
